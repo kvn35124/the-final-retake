@@ -59,7 +59,7 @@ class Book extends React.Component<BookProps, BookState> {
                             <h2 className="card-title text-center">{this.state.title}</h2>
                             <p className="card-text">{this.state.author}</p>
                             <p className="card-text">{this.state.name}</p>
-                            <p className="card-text">{this.state.price}</p>
+                            <p className="card-text">${Number(this.state.price).toFixed(2)}</p>
                             <div className="d-flex justify-content-around">
                                 <Link to='/books' className="btn btn-primary" >Back</Link>
                                 <Link to={`/update/${this.props.match.params.id}`} className="btn btn-warning">Edit</Link>

@@ -36,7 +36,7 @@ class Books extends React.Component<BooksProps, BooksState> {
                                 <h2 className="card-title text-center">{book.title}</h2>
                                 <p className="card-text">{book.author}</p>
                                 <p className="card-text">{book.name}</p>
-                                <p className="card-text">{book.price}</p>
+                                <p className="card-text">${Number(book.price).toFixed(2)}</p>
                                 <Link to={`/books/${book.id}`} className="btn btn-primary">View</Link>
                             </div>
                         </div>
