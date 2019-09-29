@@ -14,18 +14,21 @@ class Update extends React.Component<UpdateProps, UpdateState> {
             author: '',
             price: '',
             categoryid: '',
-            categories: []
+            categories: [],
         }
     }
 
     async componentDidMount() {
         let results = await fetch(`/api/books/${this.props.match.params.id}`);
+        let results2 = await fetch(`/api/categories/`);
         let book = await results.json();
+        let categories = await results2.json();
         this.setState({
             title: book.title,
             author: book.author,
             price: book.price,
-            categoryid: book.categoryid
+            categoryid: book.categoryid,
+            categories
         })
     }
 
@@ -84,7 +87,7 @@ interface UpdateState {
     author: string;
     price: string;
     categoryid: string;
-    categories: Array<ICategories>
+    categories: Array<ICategories>;
 }
 
 
