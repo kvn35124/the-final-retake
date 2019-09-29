@@ -1,9 +1,13 @@
 import * as express from 'express';
 import * as path from 'path';
 import routes from './routes';
+import './middlewares/localstrategy';
+import './middlewares/bearerstrategy';
+import * as passport from 'passport';
 
 const app = express();
 
+app.use(passport.initialize());
 app.use(express.static('public'));
 app.use(express.json());
 app.use(routes);

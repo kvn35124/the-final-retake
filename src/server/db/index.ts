@@ -3,6 +3,8 @@ import config from '../config';
 
 import Books from './tables/Books';
 import Categories from './tables/Categories';
+import Tokens from './tables/Tokens';
+import Users from './tables/Users';
 
 
 console.log(config.mysql);
@@ -21,5 +23,7 @@ export const Query = (query: string, values?: any) => {
 
 export default {
     Books,
-    Categories
+    Categories,
+    Tokens,
+    Users
 }
